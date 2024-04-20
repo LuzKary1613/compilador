@@ -184,7 +184,7 @@ def scanner(codigo: str):  #CORAZÓN DEL COMPILADOR | TOMA LA CADENA DE TEXTO (c
 
 
             elif error(siguiente_estado): # SI ES UN ESTADO DE ERROR
-                yield "token: EOF"  #EMITE EL TOKEN EOF
+                yield "token: noSigma"  #EMITE EL TOKEN noSigma
                 token = '' # SE LIMPIA LA VARIABLE TOKEN PARA EMPEZAR DE NUEVO
                 estado = 0 # SE LIMPIA EL ESTADO PARA EMPEZAR DE NUEVO
 
@@ -195,7 +195,33 @@ def scanner(codigo: str):  #CORAZÓN DEL COMPILADOR | TOMA LA CADENA DE TEXTO (c
         else:
             if tipo_caracter == 'noSigma':  # SI EL CARACTER NO ES RECONOCIDO (NO SIGMA)
                 yield "token: noSigma"   # EMITE EL TOKEN NO SIGMA
-           
+            else:
+                if token.strip(): # SI HAY UN CONTENIDO NO VACÍO EN TOKEN
+                    if numero_real(token): #SI ES REAL
+                        yield "Token: real" # EMITE TOKEN REAL
+                    elif token.isdigit(): # SI ES ENTERO
+                        yield "Token: num" #EMITE TOKEN NUM
+                    elif token.strip().isalpha() and len(token.strip()) == 1: #SI ES LETRA CON LONGITUD 1 
+                        yield "Token: letra" #EMITE LETRA
+                    else:
+                        yield f"Token: {token.strip()}" #SI NO ES NINGUNA SE EMITE LIBRE DE ESPACIOS
+            token = '' # SE LIMPIA LA VARIABLE TOKEN PARA EMPEZAR DE NUEVO
+            estado = 0  # SE LIMPIA EL ESTADO PARA EMPEZAR DE NUEVO
+
+        index += 1 # INCREMENTO DEL INDICE
+        if caracter == 'EOF':  # SI CARACTER ES EOF
+            break  # SE SALE DEL CICLO
+# STRIP ELIMINA ESPACIOS EN BLANCO
+    if token.strip():  # SI QUEDA ALGÚN TOKEN AL FINAL 
+        if numero_real(token):  # SI ES REAL
+            yield "Token: real" # EMITE TOKEN REAL
+        elif token.isdigit(): # SI ES ENTERO
+            yield "Token: num" # EMITE NUM
+        elif token.strip().isalpha() and len(token.strip()) == 1: # SI ES LETRA CON LONGITUD 1
+            yield "Token: letra" # EMITE LETRA
+        else:
+            yield f"Token: {token.strip()}" # EN CASO CONTRAIO LO EMITE TAL Y COMO ESTA
+
 
 # CÓDIGO PRUEBA
 codigo_prueba = """ { Example #1 }
