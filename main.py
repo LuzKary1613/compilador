@@ -1,36 +1,36 @@
 tabla = {#DICCIONARIO DE LA TABLA DE TRANSICIÓN
-    0:  {'letra': 7,  'num': 3,  'noSigma': 49, 'EOF': 49, '+': 32, '-': 2,  '*': 33, '/': 34, '<': 13, '=': 29, '>': 14, ':': 15, ';': 35, ',': 36, '\'': 1,  '.': 37, '_': 6,  '[': 38, ']': 39, '{': 12, '}': 40, '(': 9,  ')': 41, '\n': 0,  '\r': 0,  'space': 0},
-    1:  {'letra': 1,  'num': 1,  'noSigma': 1,  'EOF': 42, '+': 1,  '-': 1,  '*': 1,  '/': 1,  '<': 1,  '=': 1,  '>': 1,  ':': 1,  ';': 1,  ',': 1,  '\'': 16, '.': 1,  '_': 1,  '[': 1,  ']': 1,  '{': 1,  '}': 1,  '(': 1,  ')': 1,  '\n': 43, '\r': 43, 'space': 1},
-    2:  {'letra': 17, 'num': 3,  'noSigma': 44, 'EOF': 44, '+': 17, '-': 17, '*': 17, '/': 17, '<': 17, '=': 17, '>': 17, ':': 17, ';': 17, ',': 17, '\'': 17, '.': 17, '_': 17, '[': 17, ']': 17, '{': 17, '}': 17, '(': 17, ')': 17, '\n': 17, '\r': 17, 'space': 17},
-    3:  {'letra': 18, 'num': 3,  'noSigma': 45, 'EOF': 45, '+': 18, '-': 18, '*': 18, '/': 18, '<': 18, '=': 18, '>': 18, ':': 18, ';': 18, ',': 18, '\'': 18, '.': 4,  '_': 18, '[': 18, ']': 18, '{': 18, '}': 18, '(': 18, ')': 18, '\n': 18, '\r': 18, 'space': 18},
-    4:  {'letra': 47, 'num': 5,  'noSigma': 46, 'EOF': 46, '+': 47, '-': 47, '*': 47, '/': 47, '<': 47, '=': 47, '>': 47, ':': 47, ';': 47, ',': 47, '\'': 47, '.': 19, '_': 47, '[': 47, ']': 47, '{': 47, '}': 47, '(': 47, ')': 47, '\n': 47, '\r': 47, 'space': 47},
-    5:  {'letra': 20, 'num': 5,  'noSigma': 48, 'EOF': 48, '+': 20, '-': 20, '*': 20, '/': 20, '<': 20, '=': 20, '>': 20, ':': 20, ';': 20, ',': 20, '\'': 20, '.': 20, '_': 20, '[': 20, ']': 20, '{': 20, '}': 20, '(': 20, ')': 20, '\n': 20, '\r': 20, 'space': 20},
-    6:  {'letra': 7,  'num': 8,  'noSigma': 50, 'EOF': 50, '+': 51, '-': 51, '*': 51, '/': 51, '<': 51, '=': 51, '>': 51, ':': 51, ';': 51, ',': 51, '\'': 51, '.': 51, '_': 51, '[': 51, ']': 51, '{': 51, '}': 51, '(': 51, ')': 51, '\n': 51, '\r': 51, 'space': 51},
-    7:  {'letra': 7,  'num': 8,  'noSigma': 52, 'EOF': 52, '+': 21, '-': 21, '*': 21, '/': 21, '<': 21, '=': 21, '>': 21, ':': 21, ';': 21, ',': 21, '\'': 21, '.': 21, '_': 6,  '[': 21, ']': 21, '{': 21, '}': 21, '(': 21, ')': 21, '\n': 21, '\r': 21, 'space': 21},
-    8:  {'letra': 7,  'num': 8,  'noSigma': 53, 'EOF': 53, '+': 21, '-': 21, '*': 21, '/': 21, '<': 21, '=': 21, '>': 21, ':': 21, ';': 21, ',': 21, '\'': 21, '.': 21, '_': 6,  '[': 21, ']': 21, '{': 21, '}': 21, '(': 21, ')': 21, '\n': 21, '\r': 21, 'space': 21},
-    9:  {'letra': 55, 'num': 55, 'noSigma': 54, 'EOF': 54, '+': 55, '-': 55, '*': 10, '/': 55, '<': 55, '=': 55, '>': 55, ':': 55, ';': 55, ',': 55, '\'': 55, '.': 55, '_': 55, '[': 55, ']': 55, '{': 55, '}': 55, '(': 55, ')': 55, '\n': 55, '\r': 55, 'space': 55},
-    10: {'letra': 10, 'num': 10, 'noSigma': 10, 'EOF': 56, '+': 10, '-': 10, '*': 11, '/': 10, '<': 10, '=': 10, '>': 10, ':': 10, ';': 10, ',': 10, '\'': 10, '.': 10, '_': 10, '[': 10, ']': 10, '{': 10, '}': 10, '(': 10, ')': 10, '\n': 10, '\r': 10, 'space': 10},
-    11: {'letra': 10, 'num': 10, 'noSigma': 10, 'EOF': 56, '+': 10, '-': 10, '*': 10, '/': 10, '<': 10, '=': 10, '>': 10, ':': 10, ';': 10, ',': 10, '\'': 10, '.': 10, '_': 10, '[': 10, ']': 10, '{': 10, '}': 10, '(': 10, ')': 22, '\n': 10, '\r': 10, 'space': 10},
-    12: {'letra': 12, 'num': 12, 'noSigma': 12, 'EOF': 58, '+': 12, '-': 12, '*': 12, '/': 12, '<': 12, '=': 12, '>': 12, ':': 12, ';': 12, ',': 12, '\'': 12, '.': 12, '_': 12, '[': 12, ']': 12, '{': 57, '}': 23, '(': 57, ')': 12, '\n': 57, '\r': 57, 'space': 12},
-    13: {'letra': 24, 'num': 24, 'noSigma': 59, 'EOF': 59, '+': 24, '-': 24, '*': 24, '/': 24, '<': 24, '=': 25, '>': 26, ':': 24, ';': 24, ',': 24, '\'': 24, '.': 24, '_': 24, '[': 24, ']': 24, '{': 24, '}': 24, '(': 24, ')': 24, '\n': 24, '\r': 24, 'space': 24},
-    14: {'letra': 27, 'num': 27, 'noSigma': 60, 'EOF': 60, '+': 27, '-': 27, '*': 27, '/': 27, '<': 27, '=': 28, '>': 27, ':': 27, ';': 27, ',': 27, '\'': 27, '.': 27, '_': 27, '[': 27, ']': 27, '{': 27, '}': 27, '(': 27, ')': 27, '\n': 27, '\r': 27, 'space': 27},
-    15: {'letra': 30, 'num': 30, 'noSigma': 61, 'EOF': 61, '+': 30, '-': 30, '*': 30, '/': 30, '<': 30, '=': 31, '>': 30, ':': 30, ';': 30, ',': 30, '\'': 30, '.': 30, '_': 30, '[': 30, ']': 30, '{': 30, '}': 30, '(': 30, ')': 30, '\n': 30, '\r': 30, 'space': 30},
-    16: 'string',
-    17: '-',
-    18: 'num',
-    19: '..',
-    20: 'real',
-    21: 'identifier',
-    22: 'comentarios',
-    23: 'comentario',
-    24: '<',
-    25: '<=', 
-    26: '<>',
-    27: '>', 
-    28: '>=', 
-    29: '=',
-    30: ':',
-    31: ':=',
+    0:  {'letra': 7,  'num': 3,  'noSigma': 59, 'EOF': 59, '+': 32, '-': 2,  '*': 33, '/': 34, '<': 13, '=': 31, '>': 14, ':': 12, ';': 35, ',': 36, '\'': 1,  '.': 37, '_': 6,  '[': 38, ']': 39, '{': 8,  '}': 40, '(': 9,  ')': 41, '\n': 0,  '\r': 0,  'space': 0},
+    1:  {'letra': 1,  'num': 1,  'noSigma': 1,  'EOF': 43, '+': 1,  '-': 1,  '*': 1,  '/': 1,  '<': 1,  '=': 1,  '>': 1,  ':': 1,  ';': 1,  ',': 1,  '\'': 15, '.': 1,  '_': 1,  '[': 1,  ']': 1,  '{': 1,  '}': 1,  '(': 1,  ')': 1,  '\n': 42, '\r': 42, 'space': 1},
+    2:  {'letra': 16, 'num': 3,  'noSigma': 44, 'EOF': 44, '+': 16, '-': 16, '*': 16, '/': 16, '<': 16, '=': 16, '>': 16, ':': 16, ';': 16, ',': 16, '\'': 16, '.': 16, '_': 16, '[': 16, ']': 16, '{': 16, '}': 16, '(': 16, ')': 16, '\n': 16, '\r': 16, 'space': 16},
+    3:  {'letra': 17, 'num': 3,  'noSigma': 45, 'EOF': 45, '+': 17, '-': 17, '*': 17, '/': 17, '<': 17, '=': 17, '>': 17, ':': 17, ';': 17, ',': 17, '\'': 17, '.': 4,  '_': 17, '[': 17, ']': 17, '{': 17, '}': 17, '(': 17, ')': 17, '\n': 17, '\r': 17, 'space': 17},
+    4:  {'letra': 47, 'num': 5,  'noSigma': 46, 'EOF': 46, '+': 47, '-': 47, '*': 47, '/': 47, '<': 47, '=': 47, '>': 47, ':': 47, ';': 47, ',': 47, '\'': 47, '.': 18, '_': 47, '[': 47, ']': 47, '{': 47, '}': 47, '(': 47, ')': 47, '\n': 47, '\r': 47, 'space': 47},
+    5:  {'letra': 19, 'num': 5,  'noSigma': 48, 'EOF': 48, '+': 19, '-': 19, '*': 19, '/': 19, '<': 19, '=': 19, '>': 19, ':': 19, ';': 19, ',': 19, '\'': 19, '.': 19, '_': 19, '[': 19, ']': 19, '{': 19, '}': 19, '(': 19, ')': 19, '\n': 19, '\r': 19, 'space': 19},
+    6:  {'letra': 7,  'num': 7,  'noSigma': 49, 'EOF': 49, '+': 49, '-': 49, '*': 49, '/': 49, '<': 49, '=': 49, '>': 49, ':': 49, ';': 49, ',': 49, '\'': 49, '.': 49, '_': 49, '[': 49, ']': 49, '{': 49, '}': 49, '(': 49, ')': 49, '\n': 49, '\r': 49, 'space': 49},
+    7:  {'letra': 7,  'num': 7,  'noSigma': 50, 'EOF': 50, '+': 20, '-': 20, '*': 20, '/': 20, '<': 20, '=': 20, '>': 20, ':': 20, ';': 20, ',': 20, '\'': 20, '.': 20, '_': 7,  '[': 20, ']': 20, '{': 20, '}': 20, '(': 20, ')': 20, '\n': 20, '\r': 20, 'space': 20},
+    8:  {'letra': 8,  'num': 8,  'noSigma': 8,  'EOF': 52, '+': 8,  '-': 8,  '*': 8,  '/': 8,  '<': 8,  '=': 8,  '>': 8,  ':': 8,  ';': 8,  ',': 8,  '\'': 8,  '.': 8,  '_': 8,  '[': 8,  ']': 8,  '{': 51, '}': 21, '(': 51, ')': 8,  '\n': 51, '\r': 51, 'space': 8},
+    9:  {'letra': 22, 'num': 22, 'noSigma': 53, 'EOF': 53, '+': 22, '-': 22, '*': 10, '/': 22, '<': 22, '=': 22, '>': 22, ':': 22, ';': 22, ',': 22, '\'': 22, '.': 22, '_': 22, '[': 22, ']': 22, '{': 22, '}': 22, '(': 22, ')': 22, '\n': 22, '\r': 22, 'space': 22},
+    10: {'letra': 10, 'num': 10, 'noSigma': 10, 'EOF': 54, '+': 10, '-': 10, '*': 11, '/': 10, '<': 10, '=': 10, '>': 10, ':': 10, ';': 10, ',': 10, '\'': 10, '.': 10, '_': 10, '[': 10, ']': 10, '{': 10, '}': 10, '(': 10, ')': 10, '\n': 10, '\r': 10, 'space': 10},
+    11: {'letra': 10, 'num': 10, 'noSigma': 10, 'EOF': 55, '+': 10, '-': 10, '*': 10, '/': 10, '<': 10, '=': 10, '>': 10, ':': 10, ';': 10, ',': 10, '\'': 10, '.': 10, '_': 10, '[': 10, ']': 10, '{': 10, '}': 10, '(': 10, ')': 23, '\n': 10, '\r': 10, 'space': 10},
+    12: {'letra': 25, 'num': 25, 'noSigma': 59, 'EOF': 56, '+': 25, '-': 25, '*': 25, '/': 25, '<': 25, '=': 24, '>': 25, ':': 25, ';': 25, ',': 25, '\'': 25, '.': 25, '_': 25, '[': 25, ']': 25, '{': 25, '}': 25, '(': 25, ')': 25, '\n': 25, '\r': 25, 'space': 25},
+    13: {'letra': 28, 'num': 28, 'noSigma': 57, 'EOF': 57, '+': 28, '-': 28, '*': 28, '/': 28, '<': 28, '=': 27, '>': 26, ':': 28, ';': 28, ',': 28, '\'': 28, '.': 28, '_': 28, '[': 28, ']': 28, '{': 28, '}': 28, '(': 28, ')': 28, '\n': 28, '\r': 28, 'space': 28},
+    14: {'letra': 30, 'num': 30, 'noSigma': 58, 'EOF': 58, '+': 30, '-': 30, '*': 30, '/': 30, '<': 30, '=': 29, '>': 30, ':': 30, ';': 30, ',': 30, '\'': 30, '.': 30, '_': 30, '[': 30, ']': 30, '{': 30, '}': 30, '(': 30, ')': 30, '\n': 30, '\r': 30, 'space': 30},
+    15: 'string',
+    16: '-',
+    17: 'integer',
+    18: '..',
+    19: 'real',
+    20: 'identifier',
+    21: 'comments one line',
+    22: '(',
+    23: 'comments multi line',
+    24: ':=', 
+    25: ':',
+    26: '<>', 
+    27: '<=', 
+    28: '<',
+    29: '>=',
+    30: '>',
+    31: '=',
     32: '+',
     33: '*',
     34: '/',
@@ -41,49 +41,47 @@ tabla = {#DICCIONARIO DE LA TABLA DE TRANSICIÓN
     39: ']',
     40: '}',
     41: ')',
-    42: 'ERROR: ',
-    43: 'ERROR: ',
-    44: 'ERROR: ',
-    45: 'ERROR: ',
-    46: 'ERROR: ',
-    47: 'ERROR: ',
-    48: 'ERROR: ',
-    49: 'ERROR: ',
-    50: 'ERROR: ',
-    51: 'ERROR: ',
-    52: 'ERROR: ',
-    53: 'ERROR: ',
-    54: 'ERROR: ',
-    55: 'ERROR: ',
-    56: 'ERROR: ',
-    57: 'ERROR: ',
-    58: 'ERROR: ',
-    59: 'ERROR: ',
-    60: 'ERROR: ',
-    61: 'ERROR: ',
+    42: 'ERROR: Por \n,\r ',
+    43: 'ERROR: EOF ',
+    44: 'ERROR: EOF, noSigma',
+    45: 'ERROR: EOF, noSigma',
+    46: 'ERROR: EOF, noSigma',
+    47: 'ERROR: sigma - . - num',
+    48: 'ERROR: EOF, noSigma',
+    49: 'ERROR: EOF, noSigma, \n,\r, space, sigma',
+    50: 'ERROR: EOF, noSigma',
+    51: 'ERROR: {,(,\n,\r',
+    52: 'ERROR: EOF',
+    53: 'ERROR: EOF, noSigma',
+    54: 'ERROR: EOF',
+    55: 'ERROR: EOF',
+    56: 'ERROR: EOF, noSigma',
+    57: 'ERROR: EOF, noSigma',
+    58: 'ERROR: EOF, noSigma',
+    59: 'ERROR: EOF, noSigma',
 } 
 
-tokenID = { #DICCIONARIO DE LAS PALABRAS CLAVES
+tokID = { #DICCIONARIO DE LOS TOKENS
     "program": "1",
-    "real": "2",
-    "repeat": "3",
-    "procedure": "4",
-    "string": "5",
-    "until": "6",
-    "function": "7",
-    "array": "8",
-    "for": "9",
-    "begin": "10",
+    "procedure": "2",
+    "function": "3",
+    "begin": "4",
+    "end": "5",
+    "var": "6",
+    "integer": "7",
+    "real": "8",
+    "string": "9",
+    "array": "10",
     "of": "11",
-    "to": "12",
-    "end": "13",
-    "if": "14",
-    "do": "15",
-    "var": "16",
-    "then": "17",
-    "readLn": "18",
-    "integer": "19",
-    "else": "20",
+    "if": "12",
+    "then": "13",
+    "else": "14",
+    "repeat": "15",
+    "until": "16",
+    "for": "17",
+    "to": "18",
+    "do": "19",
+    "readLn": "20",
     "writeLn": "21",
     "+": "22",
     "-": "23",
@@ -99,140 +97,343 @@ tokenID = { #DICCIONARIO DE LAS PALABRAS CLAVES
     ":": "33",
     ";": "34",
     ",": "35",
-    ".": "36",
-    "(": "37",
-    ")": "38",
-    "[": "39",
-    "]": "40",
-    "{": "41",
-    "}": "42",
-    "(*": "43",
-    "*)": "44",
-    "\'" : "45",
-    "identifier" : "47",
-    "num": "48",
-    "comentarios" : "49",
-    "comentario" : "50",
-    "real" : "51",
-    "noSigma" : "52"
+    "'": "36",
+    ".": "37",
+    "(": "38",
+    ")": "39",
+    "[": "40",
+    "]": "41",
+    "{": "42",
+    "}": "43",
+    "identifier": "44",
+    "comments one line": "45",
+    "comments multi line": "46",
+    "..": "47", 
+    " error" : "48" 
 }
 
-def aceptor(estado: int): # DETERMINA SI ES UN ESTADO ACEPTOR 
-    return estado >= 16 and estado <= 41  # DEL ESTADO 16 AL 41 
 
-def error(estado: int): # DETERMINA SI ES UN ESTADO DE ERROR 
-    return estado >= 42 and estado <= 61 # DEL ESTADO 43 AL 61 
-    
-def tipo(caracter): # DETERMINA EL TIPO DE CARACTER
-    if caracter.isalpha(): # ISALPHA = LETRAS
+        # FUNCIÓN CLASIFICADORA DE CARACTERES
+def tipo(caracter):
+    # Verifica si el caracter es alfabético, si lo es, retorta 'letra'
+    if caracter.isalpha(): 
         return 'letra'
-    elif caracter.isdigit(): # ISDIGIT = NÚMEROS
+    # Verifica si el caracter es un dígito numérico, si lo es, retorta 'num'
+    elif caracter.isdigit(): 
         return 'num'
-    elif caracter in ['{', '}', '[', ']', '(', ')', ';', ',', ':', '.', '+', '-', '*', '/', '\'']: # SÍMBOLOS 
-        return caracter  
-    elif caracter in ['\n', '\r', '\t', ' ']: # SÍMBOLOS ESPECIFICOS DE ESPACIO 
-        return 'space'  
-    else:                               
-        return 'noSigma'  #SÍMBOLOS DIFERENTES A SIGMA COMO #
+    # Verifica si el caracter está en la siguiente lista de símbolos, si lo es, retorta 'caracter' 
+    elif caracter in ['{', '}', ';', '(', ')', '*', '/', '+', '-', '.', ':', ',', '=', '<', '>', '!', '[', ']', '\'']: 
+        return caracter
+    # Verifica si el caracter es un espacio en blanco, si lo es, retorta 'space'
+    elif caracter.isspace():
+        return 'space'
+    # Si el caracter no cumple con ninguno de los criterios anteriores, retorna 'noSigma'
+    else:
+        return 'noSigma'
     
-def siguiente_caracter(codigo: str, index: int): # REGRESA EL SIGUIENTE CARACTER DE LA CADENA DE ENTRADA BASANDOSE EN UN INDICE. RECIBE LA CADENA DE TEXTO Y LA POSICIÓN ACTUAL DEL CARACTER
-    return codigo[index] # RETORNO DEL CARACTER UBICADO EN LA POSICIÓN ESPECIFICADA POR INDEX
 
-def numero_real(decimal): #TOMA DE ARGUMENTO DECIMAL PARA GUARDAR LA CADENA QUE CONTIENE EL NÚMERO REAL
-    try:  # CONVIERTE LA CADENA (decimal) A UN NÚMERO REAL .........  | LA USE PORQUE TENÍA PROBLEMAS PARA LANZAR EL TOKEN REAL  ( TRY lanza una excepción debido a un error durante su ejecución)
-        float(decimal)  #USANDO LA FUNCIÓN FLOAT
-        return '.' in decimal  #VERIFICA QUE HAYA UN PUNTO Y ASÍ SE ASEGURA DE QUE SEA UN NÚMERO DECIMAL
-    except ValueError: #  La cláusula except captura cualquier ValueError generado en el bloque try. Un ValueError ocurre si float(decimal) falla debido a que decimal no es convertible a flotante.
-        return False  # SI NO ES UN NÚMERO REAL, REGRESA FALSE
-
-def scanner(codigo: str):  #CORAZÓN DEL COMPILADOR | TOMA LA CADENA DE TEXTO (codigo) DE TIPO STRING
-    index = 0 # CONTADOR PARA SEGUIR LA POSICIÓN ACTUAL DENTRO DE LA CADENA (codigo) | SE INICIALIZA EN 0 PORQUE INICIA DESDE EL PRIMER CARACTER DE LA CADENA
-    estado = 0  # ESTADOS DE LA TABLA DE TRANSICIONES | SE INICIALIZA EN 0 PORQUE LA TABLA EMPIEZA DESDE EL ESTADO 0
-    token = '' # CADENA DE TEXTO DONDE SE ACOMULAN LOS CARACTERES | SE INICIALIZA VACIA PORQUE AÚN NO SE ESCANEA NADA
-    en_comentario = False # ¿ESTA EL ESCANER ACTUALMENTE DENTRO DE UN COMENTARIO?
-    comentario_abierto = None # ANALIZA HASTA QUE EL COMENTARIO SEA CERRADO
-
-    while index < len(codigo): # MIENTRAS EL ÍNDICE SEA MENOR QUE LA LONGITUD TORAL DEL CÓDIGO FUENTE
-        caracter = siguiente_caracter(codigo, index) # DEVUELVE EL CARACTER EN LA POSICIÓN ACTUAL DEL ÍNDICE DENTRO DE LA CADENA (codigo).
-        tipo_caracter = tipo(caracter)  # DEVUELVE EL TIPO DE CARACTER 
-
-        if en_comentario: # SI ESTAMOS ESCANEANDO UN COMENTAARIO 
-            if (comentario_abierto == '{' and caracter == '}') or \
-               (comentario_abierto == '(*' and caracter == '*' and siguiente_caracter(codigo, index + 1) == ')'):
-                en_comentario = False # SI SE ENCONTRO '}' O '*)' INDICA QUE YA SE LEYÓ EL COMENTARIO COMPLETO Y YA NO ESTA EN UN COMENTARIO
-                comentario_abierto = None # NO HAY NINGÚN COMENTARIO ABIERTO
-                index += 2 if caracter == '*' else 1 # SI EL COMENTARIO CERRADO FUE *), SE INCREMENTA EN 2 PARA PASAR POR ALTO * Y ).
-                continue
-            index += 1  # SI FUE }, SOLO SE INCREMENTA EN 1.
-            continue
-
-        if tipo_caracter in tabla[estado]: # SI EL TIPO DE CARACTER ACTUAL ES UNA CLAVE VALIDA EN LA TABLA DE TRANSICIONES (tabla)
-            siguiente_estado = tabla[estado][tipo_caracter] # SE ASIGNA EL NUEVO ESTADO
-
-            if aceptor(siguiente_estado): # SI ES UN ESTADO ACEPTOR
-                if token.strip():  #VERIFICA SI EXISTE EL TOKEN
-                    if numero_real(token):  # SI EL TOKEN ES UN NÚMERO REAL
-                        yield "token: real"   # SE EMITE COMO TOKEN REAL
-                    elif token.isdigit():    # SI EL TOKEN ES UN NÚMERO ENTERO
-                        yield "token: num"  #SE EMITE COMO UN TOKEN  NUM
-                    elif token.strip().isalpha() and len(token.strip()) == 1: # SI EL TOKEN ES UNA LETRA
-                        yield "token: letra"  #SE EMITE COMO LETRA
-                    else:
-                        yield f"token: {token.strip()}"  # SI EL TOKEN NO CUMPLE LAS ANTERIORES CONDICIONES SE EMITE TAL CUAL ESTA
-                token = ''  # SE LIMPIA LA VARIABLE TOKEN PARA EMPEZAR DE NUEVO
-                estado = 0  # SE LIMPIA EL ESTADO PARA EMPEZAR DE NUEVO
+                                    # (ACEPTOR Y ERROR) DECIDEN CUÁNDO UN LEXEMA HA FORMADO UN TOKEN COMPLETO O SE HA ENCONTRADO UN ERROR #
 
 
-            elif error(siguiente_estado): # SI ES UN ESTADO DE ERROR
-                yield "token: noSigma"  #EMITE EL TOKEN noSigma
-                token = '' # SE LIMPIA LA VARIABLE TOKEN PARA EMPEZAR DE NUEVO
-                estado = 0 # SE LIMPIA EL ESTADO PARA EMPEZAR DE NUEVO
+        # FUNCIÓN QUE DETERMINA SI UN ESTADO DADO ES UN ESTADO DE ACEPTACIÓN
+# Recibe el parámetro estado (estado actual en la máquina de estados)
+def aceptor(estado):
+    # Comprueba si el estado actual está dentro del rango de 15 a 41 
+    return 15 <= estado <= 41
+    # Devuelve True si el estado actual está dentro de este rango, de lo contrario, devuelve False
 
 
-            else: # SI ES UN ESTADO DE TRANSICIÓN
-                token += caracter  # SE ACOMULA EL CARACTER ACTUAL EN LA VARIABLE TOKEN
-                estado = siguiente_estado  #SE ACTUALIZA EL ESTADO PARA EL CARACTER ACTUAL
+
+        # FUNCIÓN QUE DETERMINA SI UN ESTADO DADO ES UN ESTADO DE ACEPTACIÓN
+# Recibe el parámetro estado (estado actual en la máquina de estados)
+def error(estado):
+    # Comprueba si el estado actual está dentro del rango de 42 a 59 
+    return 42 <= estado <= 59
+    # Devuelve True si el estado actual está dentro de este rango, de lo contrario, devuelve False
+
+
+
+        # FUNCIÓN QUE DETERMINA COMO Y CUANDO EL ANALIZADOR LEXICO DEBE AVANZAR 
+# estado = Estado actual en la máquina de estados 
+# caracter_actual = Caracter que está siendo analizado actualmente
+# caracter_siguiente = Próximo caracter en la entrada, que el analizador considerará después del actual
+# tipo_caracter_actual = caracter_actual + tipo
+# tipo_caracter_siguiente = caracter_actual + tipo
+def avanzar(estado, caracter_actual, caracter_siguiente, tipo_caracter_actual, tipo_caracter_siguiente):
+    # Conjunto de símbolos que requieren pausas en el análisis debido a su importancia en la sintaxis del lenguaje de programación
+    simbolos = {';', '+', '-', '*', '/', '<', '>', '=', ':', '.', '\'', ',', '(', ')', '>=', '<=', '<>', ':='}
+    # Verificar condiciones de avance basadas en el estado de aceptación o error
+    if aceptor(estado):
+        # Si el caracter_actual es un espacio o el caracter_siguiente es uno de los símbolos definidos o un espacio, retorna True
+        if tipo_caracter_actual == 'space' or tipo_caracter_siguiente in simbolos or tipo_caracter_siguiente == 'space':
+            # Se debe avanzar y potencialmente finalizar el token actual
+            return True 
+        # Si el caracter_actual está en el conjunto de símbolos, retorna True
+        elif caracter_actual in simbolos:
+            # Esto asegura que símbolos que pueden actuar como delimitadores de tokens sean procesados de manera inmediata
+            return True
+        # En otros casos, retorna False
         else:
-            if tipo_caracter == 'noSigma':  # SI EL CARACTER NO ES RECONOCIDO (NO SIGMA)
-                yield "token: noSigma"   # EMITE EL TOKEN NO SIGMA
+            # Indica que aún no es momento de avanzar porque el lexema actual no está completo o no requiere pausa
+            return False
+    # Si el estado es un estado de error, la función siempre retorna False
+    elif error(estado):
+        return False
+    # Avance por defecto
+    else:
+        # Si no se cumple ninguna de las condiciones anteriores, la función retorna True, permitiendo que el análisis continúe 
+        return True
+    
+
+
+# FUNCIÓN QUE DETERMINA EL TOKEN APROPIADO BASADO EN EL ESTADO ACTUAL DE LA MAQUINA DE ESTADOS
+# estado = estado actual del analizador
+# texto = cadena de caracteres (texto) que ha sido identificada como una unidad coherente (identificador, comentario, string, etc)
+def obtener_token(estado, lexema):
+    # Diccionario para mapear estados numéricos específicos a tokens deseados
+    estado_a_token = {
+        21: '45', # Token para comentario simple
+        23: '46', # Token para comentario múltiple
+        15: '9', # Token para string
+        20: '44', # Token para identificador
+        17: '7', # Token para números enteros
+        19: '8', # Token para números con decimal
+        16: '23', # Token -
+        18: '47', # Token ..
+        22: '38', # Token (
+        24: '32', # Token :=
+        25: '33', # Token :
+        26: '31', # Token <>
+        27: '27', # Token <=
+        28: '26', # Token <
+        29: '29', # Token >=
+        30: '28', # Token >
+        31: '30', # Token =
+        32: '22', # Token +
+        33: '24', # Token *
+        34: '25', # Token /
+        35: '34', # Token ;
+        36: '35', # Token ,
+        37: '37', # Token .
+        38: '40', # Token [
+        39: '41', # Token ]
+        40: '43', # Token }
+        41: '39', # Token )  
+        42: '48', # ERROR: Por \n,\r 
+        43: '48', # ERROR: EOF 
+        44: '48', # ERROR: EOF, noSigma
+        45: '48', # ERROR: EOF, noSigma
+        46: '48', # ERROR: EOF, noSigma
+        47: '48', # ERROR: sigma - . - num
+        48: '48', # ERROR: EOF, noSigma
+        49: '48', # ERROR: EOF, noSigma, \n,\r, space, sigma
+        50: '48', # ERROR: EOF, noSigma
+        51: '48', # ERROR: Por \n,\r, {,(
+        52: '48', # ERROR: EOF 
+        53: '48', # ERROR: EOF, noSigma
+        54: '48', # ERROR: EOF 
+        55: '48', # ERROR: EOF 
+        56: '48', # ERROR: EOF, noSigma
+        57: '48', # ERROR: EOF, noSigma
+        58: '48', # ERROR: EOF, noSigma
+        59: '48', # ERROR: EOF, noSigma
+    }
+    # La función primero verifica si el lexema es una palabra reservada consultando el diccionario tokID
+    if lexema in tokID:
+        # Si el lexema está presente en tokID, la función retorna el valor de token asociado
+        return tokID[lexema]
+    # Si el lexema no es una palabra reservada, la función verifica si el estado actual tiene un mapeo directo a un token en el diccionario estado_a_token.
+    if estado in estado_a_token:
+        # Si encuentra un mapeo, retorna el token correspondiente
+        return estado_a_token[estado]
+    # Si el lexema no es una palabra reservada y el estado no tiene un mapeo directo en estado_a_token, la función retorna "Token desconocido"
+    return "Token desconocido"
+
+
+
+# FUNCIÓN QUE PROCESA EL TEXTO Y ASEGURA QUE LOS SÍMBOLOS ESTEN CORRECTAMENTE SEPARADOS POR ESPACIOS DE LOS OTROS ELEMENTOS
+# texto = Cadena de caracteres que contiene el código fuente que se está analizando
+def separar_simbolos(texto):
+    # Define un conjunto de caracteres de símbolos
+    simbolos = set([';', '(', ')', '*', '/', '+', '-', '.', ':', ',', '=', '<', '>', '[', ']', '{', '}'])
+    # Almacena el nuevo texto con los espacios adecuados insertados alrededor de los símbolos
+    nuevo_texto = ""
+    # Almacena la longitud del texto original para controlar el bucle de procesamiento.
+    longitud = len(texto)
+    # Se itera sobre cada caracter del texto utilizando un bucle for
+    for i in range(longitud):
+        # Para cada caracter, se verifica si es uno de los símbolos definidos en el conjunto simbolos
+        if texto[i] in simbolos:
+            # Si el caracter actual es un símbolo y el caracter anterior no es un símbolo ni un espacio: 
+            if i > 0 and texto[i-1] not in simbolos and not texto[i-1].isspace():
+                nuevo_texto += ' '  # 1 - se añade un espacio antes del símbolo en nuevo_texto
+            nuevo_texto += texto[i] # 2 - se añade un espacio en nuevo_texto antes de añadir el símbolo actual
+            # Si el caracter siguiente al símbolo actual no es otro símbolo ni un espacio: 
+            if i < longitud - 1 and texto[i+1] not in simbolos and not texto[i+1].isspace():
+                nuevo_texto += ' '  # 1 -se añade un espacio después del símbolo en nuevo_texto
+        # Independientemente de si el caracter es un símbolo o no, se añade al nuevo_texto
+        else: 
+            # se añade un espacio en nuevo_texto antes de añadir el símbolo actual
+            nuevo_texto += texto[i] 
+    # Retorno del texto modificado
+    return nuevo_texto
+
+
+
+# FUNCIÓN QUE CONVIERTE EL TEXTO DE ENTRADA EN UNA LISTA DE TOKENS
+def escanear(texto):
+    # Antes de iniciar el escaneo, se procesa el texto para asegurar que los símbolos estén correctamente separados por espacios
+    texto = separar_simbolos(texto)
+    # Lista vacía para almacenar los tokens identificados
+    tokens = []
+    # Variable para mantener el estado actual de la máquina de estados
+    estado = 0
+    # Cadena vacía para acumular caracteres que forman un lexema
+    lexema = ''
+    # Índice para recorrer cada caracter del texto.
+    indice = 0
+    # Se añade un caracter especial (EOF, fin de archivo) al final del texto para marcar su término y facilitar la detección del final durante el escaneo.
+    texto += '\0'  
+    # Recorre el texto caracter por caracter hasta que el índice alcanza el penúltimo caracter
+    while indice < len(texto) - 1:
+        # caracter_actual se establece al caracter en la posición actual del índice dentro del texto
+        caracter_actual = texto[indice]
+        # Se verifica que el indice + 1 sea menor que la longitud total del texto. Si indice + 1 es igual o supera la longitud del texto, caracter_siguiente se establece a None
+        caracter_siguiente = texto[indice + 1] if indice + 1 < len(texto) else None
+        # Esta línea llama a la función tipo(), pasándole el caracter_actual. Esta función clasifica el caracter según su tipo
+        tipo_caracter_actual = tipo(caracter_actual)
+        # Esta línea determina el tipo de caracter_siguiente, pero solo si caracter_siguiente no es None. Si es None, tipo_caracter_siguiente se establece a None
+        tipo_caracter_siguiente = tipo(caracter_siguiente) if caracter_siguiente else None
+        # Se verifica si el tipo del caracter_actual es válido para el estado actual según la tabla de transiciones (tabla)
+        if tipo_caracter_actual in tabla[estado]:
+            # Si el tipo del caracter_actual es válido para el estado actual, se determina el estado_siguiente usando la tabla de transiciones
+            estado_siguiente = tabla[estado][tipo_caracter_actual]
+            # Se llama a la función avanzar() para decidir si se debe continuar añadiendo caracteres al lexema actual o comenzar un nuevo lexema
+            if avanzar(estado, caracter_actual, caracter_siguiente, tipo_caracter_actual, tipo_caracter_siguiente):
+                #ACOMULACIÓN DEL LEXEMA: Si se decide avanzar, se añade el caracter_actual al lexema actual
+                lexema += caracter_actual
+                # Si el estado_siguiente es un estado de aceptación, se procesa el lexema para formar un token
+                if aceptor(estado_siguiente):
+                    # Si hay un lexema no vacío después de retirar espacios:  
+                    if lexema.strip():
+                        token = obtener_token(estado_siguiente, lexema.strip()) # 1 - se obtiene el token usando obtener_token()
+                        tokens.append((token, lexema.strip())) # 2 - y se añade a la lista de tokens
+                    # Después de procesar un token:  
+                    lexema = '' # 1 - se limpia lexema
+                    estado = 0 # 2 - se reinicia el estado a 0 para empezar a procesar un nuevo lexema
+                # Si el estado_siguiente es un estado de error:   
+                elif error(estado_siguiente):
+                    print(f"Error en el índice: {indice} en el estado: {estado_siguiente}, con lexema: '{lexema}'") # 1 - se imprime un mensaje de error 
+                    lexema = '' # 2 - se limpia lexema
+                    estado = 0 # 3 - se reinicia el estado a 0 para empezar a procesar un nuevo lexema
+                # Si no es un estado de aceptación ni de error: 
+                else:
+                    # se actualiza el estado al estado_siguiente para seguir procesando más caracteres bajo las nuevas condiciones
+                    estado = estado_siguiente
+# MANTIENE LA CONTINUIDAD DEL LEXEMA
+            # Este else se ejecuta cuando la función avanzar() determina que no se debe avanzar al próximo caracter, es decir, que el caracter_actual debería seguir formando parte del lexema actual
             else:
-                if token.strip(): # SI HAY UN CONTENIDO NO VACÍO EN TOKEN
-                    if numero_real(token): #SI ES REAL
-                        yield "Token: real" # EMITE TOKEN REAL
-                    elif token.isdigit(): # SI ES ENTERO
-                        yield "Token: num" #EMITE TOKEN NUM
-                    elif token.strip().isalpha() and len(token.strip()) == 1: #SI ES LETRA CON LONGITUD 1 
-                        yield "Token: letra" #EMITE LETRA
-                    else:
-                        yield f"Token: {token.strip()}" #SI NO ES NINGUNA SE EMITE LIBRE DE ESPACIOS
-            token = '' # SE LIMPIA LA VARIABLE TOKEN PARA EMPEZAR DE NUEVO
-            estado = 0  # SE LIMPIA EL ESTADO PARA EMPEZAR DE NUEVO
-
-        index += 1 # INCREMENTO DEL INDICE
-        if caracter == 'EOF':  # SI CARACTER ES EOF
-            break  # SE SALE DEL CICLO
-# STRIP ELIMINA ESPACIOS EN BLANCO
-    if token.strip():  # SI QUEDA ALGÚN TOKEN AL FINAL 
-        if numero_real(token):  # SI ES REAL
-            yield "Token: real" # EMITE TOKEN REAL
-        elif token.isdigit(): # SI ES ENTERO
-            yield "Token: num" # EMITE NUM
-        elif token.strip().isalpha() and len(token.strip()) == 1: # SI ES LETRA CON LONGITUD 1
-            yield "Token: letra" # EMITE LETRA
+                # caracter_actual se añade al lexema actual
+                lexema += caracter_actual
+# MANEJO DE CARACTERES NO ENCONTRADOS
         else:
-            yield f"Token: {token.strip()}" # EN CASO CONTRAIO LO EMITE TAL Y COMO ESTA
+            # Se imprime un mensaje indicando que el caracter actual no fue encontrado en la tabla para el estado dado
+            print(f"No encontrado en el índice: {indice}, con caracter: '{caracter_actual}'")
+            # Antes de desechar el contenido del lexema actual y reiniciar, se verifica si el lexema contiene algún texto significativo
+            if lexema.strip():
+                # Si hay contenido válido, se llama a la función obtener_token(estado, lexema.strip()) para intentar obtener un token basado en el estado actual y el contenido del lexema
+                token = obtener_token(estado, lexema.strip())
+                # Si se obtiene un token, este se añade junto con el lexema limpio a la lista tokens y :
+                tokens.append((token, lexema.strip()))
+            lexema = '' # 1 - se limpia lexema
+            estado = 0  # 2 - se reinicia el estado a 0 para empezar a procesar un nuevo lexema
+        # Se incrementa el indice para continuar el análisis con el siguiente caracter en el texto
+        indice += 1
+
+# MANEJO DE CARACTERES QUE SE QUEDARON PENDIENTES AL FINAL DEL ANÁLISIS
+    # Verifica si hay un lexema restante que contenga caracteres distintos de espacios en blanco al final del proceso de análisis
+    if lexema.strip():
+        # Llama a la función obtener_token() para convertir el lexema final en un token.
+        token = obtener_token(estado, lexema.strip())
+        # Añade el token y el lexema limpio a la lista tokens
+        tokens.append((token, lexema.strip()))
+    # Después de asegurarse de que todos los lexemas han sido procesados y convertidos en tokens, la función escanear() retorna la lista tokens
+    return tokens
 
 
-# CÓDIGO PRUEBA
-codigo_prueba = """ { Example #1 }
-{ This is the typical "Hello World" }
-program HelloWorld;
-(* This is the main program block *)
+
+# Función: El método .strip() en Python es utilizado para remover los espacios en blanco al principio y al final de un string
+    # Limpiar los lexemas de espacios innecesarios antes de convertirlos en tokens y antes de almacenarlos
+        # Ejemplo de Uso: lexema.strip() se usa para asegurar que el lexema procesado no tenga espacios extras que podrían haberse incluido durante el análisis
+
+# Función: El método .append() en Python es usado para añadir un elemento al final de una lista. Este método modifica la lista original y no retorna ningún valor
+    # Agrega los tokens procesados y sus lexemas asociados a la lista tokens
+        # Ejemplo de Uso: tokens.append((token, lexema.strip())) añade una tupla que contiene el token y el lexema asociado (ya limpio de espacios extra) a la lista de tokens
+
+
+
+# EJECUTA EL ESCANER EN EL TEXTO DE ENTRADA
+texto_de_entrada = """ 
+{ Example #3 }
+program Ejemplo3;
+(* Var declaration section*)
+var
+a, b : integer;
+x, y : real;
+n : array [1..10] of integer;
+s: string;
+function calc (w, z : real) : integer;
 begin
-writeLn( ' Hello World ' );
-end. (* This is the end of the main
-program block *)"""
+if (w >= z) then
+calc := 5
+else
+calc := 0;
+end;
+procedure arrayInit (w: integer; z: real);
+begin
+for i := 1 to 10 do
+begin
+n[i] := 1 * 5;
+writeLn( 'n[', i, '] =', n[i]);
+end;
+end;
+procedure assign (w, z : real);
+var
+temp: real;
+begin
+temp := w;
+repeat
+temp := temp -z;
+until (temp <=0);
+if (temp = 0) then
+begin
+a := 10;
+b := 20;
+end
+else
+begin
+a := 0;
+b := 0;
+end;
+end;
+begin
+s := 'The end';
+writeLn( ' x = ' );
+readLn(x);
+writeLn( ' y = ' );
+readLn(y);
+if (calc(x,y) = 5) then
+assign(x,y)
+else
+writeLn(s);
+end.
 
-resultado = scanner(codigo_prueba) # SE LLAMA LA FUNCIÓN SCANNER CON LA CADENA DE TEXTO CON LA QUE SE VA A EVALUAR Y SE RENOMBRA POR RESULTADO
-for token in resultado: # BUCLE PARA VER LOS RESULTADOS
-    print(f"Token: {token}") # SE IMPRIME LA PALABRA TOKEN Y EL TOKENID
+
+"""
+# escanear(): Esta función toma como entrada una cadena de texto 
+# texto_de_entrada = Texto de prueba
+# resultado: Recibe el valor devuelto por la función escanear()
+resultado = escanear(texto_de_entrada)
+# Bucle que recorre la lista resultado. En cada iteración, extrae una tupla que contiene dos elementos: token y lexema.
+for token, lexema in resultado:
+    print(f"{token}, {lexema}")
