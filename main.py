@@ -16,9 +16,9 @@ tabla = {#DICCIONARIO DE LA TABLA DE TRANSICIÓN
     14: {'letra': 30, 'num': 30, 'noSigma': 58, 'EOF': 58, '+': 30, '-': 30, '*': 30, '/': 30, '<': 30, '=': 29, '>': 30, ':': 30, ';': 30, ',': 30, '\'': 30, '.': 30, '_': 30, '[': 30, ']': 30, '{': 30, '}': 30, '(': 30, ')': 30, '\n': 30, '\r': 30, 'space': 30},
     15: 'string',
     16: '-',
-    17: 'integer',
+    17: 'numEntero',
     18: '..',
-    19: 'real',
+    19: 'numDecimal',
     20: 'identifier',
     21: 'comments one line',
     22: '(',
@@ -108,29 +108,43 @@ tokID = { #DICCIONARIO DE LOS TOKENS
     "identifier": "44",
     "comments one line": "45",
     "comments multi line": "46",
-    "..": "47", 
-    " error" : "48" 
+    "numDecimal": "47",
+    "numEntero": "48",
+    "..": "49", 
+    " error" : "50" 
 }
+
+        # DICCIONARIOS PARA LAS TABLAS DE SÍMBOLOS
+# Diccionario que almacena los identificadores 
+tabla_de_simbolos_de_identificadores = {}
+# Diccionario que almacena los números enteros
+tabla_de_simbolos_de_numeros_enteros = {}
+# Diccionario que almacena los números decimales
+tabla_de_simbolos_de_numeros_decimales = {}
+# Diccionario que almacena los strings
+tabla_de_simbolos_de_strings = {}
+
 
 
         # FUNCIÓN CLASIFICADORA DE CARACTERES
 def tipo(caracter):
-    # Verifica si el caracter es alfabético, si lo es, retorta 'letra'
+    # Verifica si el caracter es alfabético, si lo es, retorna 'letra'
     if caracter.isalpha(): 
         return 'letra'
-    # Verifica si el caracter es un dígito numérico, si lo es, retorta 'num'
+    # Verifica si el caracter es un dígito numérico, si lo es, retorna 'num'
     elif caracter.isdigit(): 
         return 'num'
-    # Verifica si el caracter está en la siguiente lista de símbolos, si lo es, retorta 'caracter' 
+    # Verifica si el caracter está en la siguiente lista de símbolos, si lo es, retorna 'caracter' 
     elif caracter in ['{', '}', ';', '(', ')', '*', '/', '+', '-', '.', ':', ',', '=', '<', '>', '!', '[', ']', '\'']: 
         return caracter
-    # Verifica si el caracter es un espacio en blanco, si lo es, retorta 'space'
+    # Verifica si el caracter es un espacio en blanco, si lo es, retorna 'space'
     elif caracter.isspace():
         return 'space'
     # Si el caracter no cumple con ninguno de los criterios anteriores, retorna 'noSigma'
     else:
         return 'noSigma'
     
+
 
                                     # (ACEPTOR Y ERROR) DECIDEN CUÁNDO UN LEXEMA HA FORMADO UN TOKEN COMPLETO O SE HA ENCONTRADO UN ERROR #
 
@@ -144,12 +158,14 @@ def aceptor(estado):
 
 
 
+
         # FUNCIÓN QUE DETERMINA SI UN ESTADO DADO ES UN ESTADO DE ACEPTACIÓN
 # Recibe el parámetro estado (estado actual en la máquina de estados)
 def error(estado):
     # Comprueba si el estado actual está dentro del rango de 42 a 59 
     return 42 <= estado <= 59
     # Devuelve True si el estado actual está dentro de este rango, de lo contrario, devuelve False
+
 
 
 
@@ -186,9 +202,25 @@ def avanzar(estado, caracter_actual, caracter_siguiente, tipo_caracter_actual, t
     
 
 
+
+        # FUNCIÓN PARA AGREGAR ENTRADAS A LA TABLA DE SÍMBOLOS
+# tabla_de_simbolos = Diccionario que representa la tabla de símbolos
+# elemento = Lo se desea añadir a la tabla de símbolos
+def agrega_a_tabla_de_simbolo(tabla_de_simbolos, elemento):
+    # Se verifica si elemento ya existe en la tabla de símbolos
+    # EL NOT IN EVITA DUPLICADOS EN LA TABLA DE SÍMBOLOS
+    if elemento not in tabla_de_simbolos:
+        # Si elemento no se encuentra en la tabla de símbolos, se añade al diccionario con un valor que corresponde al número total de elementos ya presentes en el diccionario más uno
+        # El +1 incrementa el valor del índice de la tabla
+        # len(table) devuelve el número de pares clave-valor presentes en el diccionario table por ejemplo 1 , 3.14
+        tabla_de_simbolos[elemento] = len(tabla_de_simbolos) + 1
+        
+
+
+
 # FUNCIÓN QUE DETERMINA EL TOKEN APROPIADO BASADO EN EL ESTADO ACTUAL DE LA MAQUINA DE ESTADOS
 # estado = estado actual del analizador
-# texto = cadena de caracteres (texto) que ha sido identificada como una unidad coherente (identificador, comentario, string, etc)
+# lexema = cadena de caracteres (texto) que ha sido identificada como una unidad coherente (identificador, comentario, string, etc)
 def obtener_token(estado, lexema):
     # Diccionario para mapear estados numéricos específicos a tokens deseados
     estado_a_token = {
@@ -196,10 +228,10 @@ def obtener_token(estado, lexema):
         23: '46', # Token para comentario múltiple
         15: '9', # Token para string
         20: '44', # Token para identificador
-        17: '7', # Token para números enteros
-        19: '8', # Token para números con decimal
+        17: '48', # Token para números enteros
+        19: '47', # Token para números con decimal
         16: '23', # Token -
-        18: '47', # Token ..
+        18: '49', # Token ..
         22: '38', # Token (
         24: '32', # Token :=
         25: '33', # Token :
@@ -219,35 +251,52 @@ def obtener_token(estado, lexema):
         39: '41', # Token ]
         40: '43', # Token }
         41: '39', # Token )  
-        42: '48', # ERROR: Por \n,\r 
-        43: '48', # ERROR: EOF 
-        44: '48', # ERROR: EOF, noSigma
-        45: '48', # ERROR: EOF, noSigma
-        46: '48', # ERROR: EOF, noSigma
-        47: '48', # ERROR: sigma - . - num
-        48: '48', # ERROR: EOF, noSigma
-        49: '48', # ERROR: EOF, noSigma, \n,\r, space, sigma
-        50: '48', # ERROR: EOF, noSigma
-        51: '48', # ERROR: Por \n,\r, {,(
-        52: '48', # ERROR: EOF 
-        53: '48', # ERROR: EOF, noSigma
-        54: '48', # ERROR: EOF 
-        55: '48', # ERROR: EOF 
-        56: '48', # ERROR: EOF, noSigma
-        57: '48', # ERROR: EOF, noSigma
-        58: '48', # ERROR: EOF, noSigma
-        59: '48', # ERROR: EOF, noSigma
+        42: '50', # ERROR: Por \n,\r 
+        43: '50', # ERROR: EOF 
+        44: '50', # ERROR: EOF, noSigma
+        45: '50', # ERROR: EOF, noSigma
+        46: '50', # ERROR: EOF, noSigma
+        47: '50', # ERROR: sigma - . - num
+        48: '50', # ERROR: EOF, noSigma
+        49: '50', # ERROR: EOF, noSigma, \n,\r, space, sigma
+        50: '50', # ERROR: EOF, noSigma
+        51: '50', # ERROR: Por \n,\r, {,(
+        52: '50', # ERROR: EOF 
+        53: '50', # ERROR: EOF, noSigma
+        54: '50', # ERROR: EOF 
+        55: '50', # ERROR: EOF 
+        56: '50', # ERROR: EOF, noSigma
+        57: '50', # ERROR: EOF, noSigma
+        58: '50', # ERROR: EOF, noSigma
+        59: '50', # ERROR: EOF, noSigma
     }
-    # La función primero verifica si el lexema es una palabra reservada consultando el diccionario tokID
+    # Se verifica si el lexema es una palabra reservada consultando el diccionario tokID
     if lexema in tokID:
-        # Si el lexema está presente en tokID, la función retorna el valor de token asociado
+        #  Si el lexema es una palabra reservada, la función devuelve el token del diccionario tokID
         return tokID[lexema]
-    # Si el lexema no es una palabra reservada, la función verifica si el estado actual tiene un mapeo directo a un token en el diccionario estado_a_token.
+    # si el lexema no es una palabra reservada, verifica si el estado actual de la máquina de estados tiene un token guardado en el diccionario estado_a_token.
     if estado in estado_a_token:
-        # Si encuentra un mapeo, retorna el token correspondiente
-        return estado_a_token[estado]
-    # Si el lexema no es una palabra reservada y el estado no tiene un mapeo directo en estado_a_token, la función retorna "Token desconocido"
-    return "Token desconocido"
+        # Si el estado tiene un token en estado_a_token, se asigna ese token a la variable token
+        token = estado_a_token[estado]
+# ESTA PARTE SE PONE AQUÍ POR OPTIMIZACIÓN: SE TOMA EL TOKEN Y SE DECIDE QUE HACER CON EL, SI LLEGA ERROR, NO SE CREA LA TABLA DE SÍMBOLOS
+# VERIFICACIÓN Y ACTUALIZACIÓN A LAS TABLAS DE SÍMBOLOS   
+        # Si el estado indica que el lexema es un identificador, se añade a tabla_de_simbolos_de_identificadores
+        if estado == 20:  #En tabla, identifier = 20
+            agrega_a_tabla_de_simbolo(tabla_de_simbolos_de_identificadores, lexema)
+        # Si el estado indica que el lexema es un número entero, se añade a tabla_de_simbolos_de_numeros_enteros
+        elif estado == 17:  #En tabla, numEntero = 17
+            agrega_a_tabla_de_simbolo(tabla_de_simbolos_de_numeros_enteros, lexema)
+        # Si el estado indica que el lexema es un número decimal, se añade a tabla_de_simbolos_de_numeros_decimales
+        elif estado == 19:  #En tabla, numDecimal = 19
+            agrega_a_tabla_de_simbolo(tabla_de_simbolos_de_numeros_decimales, lexema)
+        # Si el estado indica que el lexema es un string, se añade a tabla_de_simbolos_de_strings
+        elif estado == 15: #En tabla, string = 15
+            agrega_a_tabla_de_simbolo(tabla_de_simbolos_de_strings, lexema)
+        #  Después de determinar el token y actualizar la tabla de símbolos correspondiente, se devuelve el token
+        return token
+    # Si el estado no corresponde a ningún token conocido y no es una palabra reservada, se devuelve "Token desconocido"
+    return "Token desconocido"  # Si el estado no tiene mapeo y no es reservado
+
 
 
 
@@ -255,28 +304,124 @@ def obtener_token(estado, lexema):
 # texto = Cadena de caracteres que contiene el código fuente que se está analizando
 def separar_simbolos(texto):
     # Define un conjunto de caracteres de símbolos
-    simbolos = set([';', '(', ')', '*', '/', '+', '-', '.', ':', ',', '=', '<', '>', '[', ']', '{', '}'])
+    simbolos = set([';', '(', ')', '*', '/', '+', '-', ':', ',', '=', '<', '>', '[', ']', '{', '}'])
     # Almacena el nuevo texto con los espacios adecuados insertados alrededor de los símbolos
     nuevo_texto = ""
     # Almacena la longitud del texto original para controlar el bucle de procesamiento.
     longitud = len(texto)
-    # Se itera sobre cada caracter del texto utilizando un bucle for
-    for i in range(longitud):
-        # Para cada caracter, se verifica si es uno de los símbolos definidos en el conjunto simbolos
-        if texto[i] in simbolos:
-            # Si el caracter actual es un símbolo y el caracter anterior no es un símbolo ni un espacio: 
+    # Inicializa un contador i en 0
+    i = 0
+    # Mientras el índice (i) sea menor que la longitud total del texto. (SE RECORREN TODOS LOS CARACTERES)
+    while i < longitud:
+#COMENTARIO DE UNA LINEA
+        # Si el caracter actual es igual al { indica el inicio de un comentario de una linea
+        if texto[i] == '{':
+            # Mientras indice sea menor que la longitud total del texto y texto sea diferente a }
+            while i < longitud and texto[i] != '}':
+                # Agrega cada carácter del comentario a nuevo_texto
+                nuevo_texto += texto[i]
+                # Incremento del índice i para avanzar al siguiente carácter en el texto
+                i += 1
+            if i < longitud:  # Asegura incluir el símbolo '}'
+                # Añade el carácter } al nuevo_texto y avanza el índice. (ES IMPORTANTE PORQUE CUANDO DETECTA } SE DETIENE)
+                nuevo_texto += texto[i]
+                # Incremento del índice i para avanzar al siguiente carácter en el texto
+                i += 1
+            # Se salta al inicio del bucle
+            continue
+# COMENTARIO DE VARIAS LINEAS
+        # Si el caracter actual es igual al (, el indice es menor a la longitud total del texto y el siguiente caracter es un * indica el inicio de un comentario de varias lineas
+        elif texto[i] == '(' and i + 1 < longitud and texto[i+1] == '*':
+            # Agrega el carácter de apertura del comentario al nuevo_texto
+            # Añade el carácter ( al nuevo_texto y avanza el índice. (ES IMPORTANTE PORQUE CUANDO DETECTA ( SE DETIENE)
+            nuevo_texto += texto[i]  
+            # Incremento del índice i para avanzar al siguiente carácter en el texto
+            i += 1
+            # Añade el carácter * al nuevo_texto y avanza el índice. (ES IMPORTANTE PORQUE CUANDO DETECTA * SE DETIENE)
+            nuevo_texto += texto[i]  
+            # Incremento del índice i para avanzar al siguiente carácter en el texto
+            i += 1
+            # Mientras el indice sea menor a la longitud total del texto y el caracter no sea *)
+            while i < longitud and not (texto[i] == '*' and i + 1 < longitud and texto[i+1] == ')'):
+                # Añade el carácter ( al nuevo_texto y avanza el índice. (ES IMPORTANTE PORQUE CUANDO DETECTA ( SE DETIENE)
+                nuevo_texto += texto[i]
+                # Incremento del índice i para avanzar al siguiente carácter en el texto
+                i += 1
+            # Si el indice es menor a la longitud total del texto
+            if i < longitud:
+                # Añade el carácter * al nuevo_texto y avanza el índice. (ES IMPORTANTE PORQUE CUANDO DETECTA * SE DETIENE)
+                nuevo_texto += texto[i]  
+                # Incremento del índice i para avanzar al siguiente carácter en el texto
+                i += 1
+            # Si el indice es menor a la longitud total del texto
+            if i < longitud:
+                # Añade el carácter ) al nuevo_texto y avanza el índice. (ES IMPORTANTE PORQUE CUANDO DETECTA * SE DETIENE)
+                nuevo_texto += texto[i]  
+                # Incremento del índice i para avanzar al siguiente carácter en el texto
+                i += 1
+            # Se salta al inicio del bucle
+            continue
+# NÚMEROS ENTEROS Y REALES
+        # Si el caracter actual es un digito o un punto decimal y el indice es menor a la longitud total del texto y el siguiente caracter es un número (3.2)
+        elif texto[i].isdigit() or (texto[i] == '.' and i + 1 < longitud and texto[i+1].isdigit()):
+            # Guarda la posición inicial del número 
+            start = i
+            # Mientras el indice sea menor a la longitud total del texto y el caracter actual sea un número o un . y el siguiente caracter sea un número
+            while i < longitud and (texto[i].isdigit() or (texto[i] == '.' and i + 1 < longitud and texto[i+1].isdigit())):
+                # # Agrega cada carácter del comentario a nuevo_texto
+                nuevo_texto += texto[i]
+                # # Incremento del índice i para avanzar al siguiente carácter en el texto
+                i += 1
+            # Si el texto termina en .
+            if texto[i-1] == '.':
+                # Si el último carácter es un punto y el siguiente carácter no es un espacio, un dígito, o un símbolo
+                if i < longitud and not texto[i].isspace() and not (texto[i].isdigit() or texto[i] in simbolos):
+                    # Se añade un espacio al nuevo_texto
+                    nuevo_texto += ' '
+            # Si el último carácter no es un punto pero se cumplen condiciones similares, también se añade un espacio para separar el número de cualquier texto o símbolo
+            else:
+                # Si el último carácter es un punto y el siguiente carácter no es un espacio, un dígito, o un símbolo
+                if i < longitud and not texto[i].isspace() and not (texto[i].isdigit() or texto[i] in simbolos):
+                    # Se añade un espacio al nuevo_texto
+                    nuevo_texto += ' '
+            # Se salta al inicio del bucle
+            continue
+# PUNTO A LADO DE CUALQUIER COSA MENOS NÚMERO
+        # Si el caracter actual es un punto y el punto esta al inicio o el caracter anterior no es un número y el punto está al final del texto o el carácter siguiente no es un número
+        elif texto[i] == '.' and (i == 0 or not texto[i-1].isdigit()) and (i == longitud - 1 or not texto[i+1].isdigit()):
+            # Si el punto no está al principio y el carácter anterior no es un espacio:
+            if i > 0 and not texto[i-1].isspace():
+                # 1 - se inserta un espacio antes del punto
+                nuevo_texto += ' '
+            # Se añade el punto al nuevo_texto.
+            nuevo_texto += texto[i]
+            # Si el punto no está al final y el carácter siguiente no es un espacio:
+            if i < longitud - 1 and not texto[i+1].isspace():
+                # 1 - Se inserta un espacio después del punto
+                nuevo_texto += ' '
+# OTROS SÍMBOLOS
+        # Si el carácter actual está dentro del conjunto de símbolos definidos 
+        elif texto[i] in simbolos:
+            # Si el carácter anterior no es un símbolo o un espacio: 
             if i > 0 and texto[i-1] not in simbolos and not texto[i-1].isspace():
-                nuevo_texto += ' '  # 1 - se añade un espacio antes del símbolo en nuevo_texto
-            nuevo_texto += texto[i] # 2 - se añade un espacio en nuevo_texto antes de añadir el símbolo actual
-            # Si el caracter siguiente al símbolo actual no es otro símbolo ni un espacio: 
+                # 1- Se añade un espacio antes del símbolo actual
+                nuevo_texto += ' '
+            # Añade el símbolo al nuevo_texto
+            nuevo_texto += texto[i]
+            # Si el carácter siguiente no es un símbolo y no es un espacio: 
             if i < longitud - 1 and texto[i+1] not in simbolos and not texto[i+1].isspace():
-                nuevo_texto += ' '  # 1 -se añade un espacio después del símbolo en nuevo_texto
-        # Independientemente de si el caracter es un símbolo o no, se añade al nuevo_texto
-        else: 
-            # se añade un espacio en nuevo_texto antes de añadir el símbolo actual
-            nuevo_texto += texto[i] 
-    # Retorno del texto modificado
+                # 1 - Se añade un espacio después del símbolo
+                nuevo_texto += ' '
+        # Si el carácter actual no es un punto que funcione como separador y no es uno de los símbolos especiales: 
+        else:
+            # Simplemente se añade al nuevo_texto como está
+            nuevo_texto += texto[i]
+        # Se incrementa el índice i después de procesar cada carácter para moverse al siguiente en el texto
+        i += 1
+    # Una vez finalizado el bucle y procesado todo el texto, la función retorna el nuevo_texto modificado, que ahora tiene todos los símbolos y puntos adecuadamente espaciados
     return nuevo_texto
+
+
 
 
 
@@ -292,7 +437,7 @@ def escanear(texto):
     lexema = ''
     # Índice para recorrer cada caracter del texto.
     indice = 0
-    # Se añade un caracter especial (EOF, fin de archivo) al final del texto para marcar su término y facilitar la detección del final durante el escaneo.
+    # Se añade un caracter especial (EOF, fin de archivo) al final del texto para marcar su término y facilitar la detección del final durante el escaneo
     texto += '\0'  
     # Recorre el texto caracter por caracter hasta que el índice alcanza el penúltimo caracter
     while indice < len(texto) - 1:
@@ -349,7 +494,6 @@ def escanear(texto):
             estado = 0  # 2 - se reinicia el estado a 0 para empezar a procesar un nuevo lexema
         # Se incrementa el indice para continuar el análisis con el siguiente caracter en el texto
         indice += 1
-
 # MANEJO DE CARACTERES QUE SE QUEDARON PENDIENTES AL FINAL DEL ANÁLISIS
     # Verifica si hay un lexema restante que contenga caracteres distintos de espacios en blanco al final del proceso de análisis
     if lexema.strip():
@@ -372,68 +516,107 @@ def escanear(texto):
 
 
 
+
+# FUNCIÓN PARA IMPRIMIR LA TABLA DE SÍMBOLOS
+def imprimir_tabla_de_simbolos():
+    print(" ") # ESPACIO
+    print(" ") # ESPACIO
+    print(" ") # ESPACIO
+    print("TABLA DE SIMBOLOS")
+    print(" ") # ESPACIO
+    # MENSAJE
+    print("1) IDENTIFICADORES:")
+    # .items() = Método que devuelve una vista de los pares clave-valor del diccionario (Identificador, Indice)
+    for identificador, indice in tabla_de_simbolos_de_identificadores.items():
+        # IMPRIME EL INDICE Y EL NÚMERO DECIMAL
+        print(f"INDICE {indice}: {identificador}")
+    # MENSAJE
+    print(" ") # ESPACIO
+    print("2) NUMEROS ENTEROS:")
+    # .items() = Método que devuelve una vista de los pares clave-valor del diccionario (numEntero, Indice)
+    for numEntero, indice in tabla_de_simbolos_de_numeros_enteros.items():
+        # IMPRIME EL INDICE Y EL NÚMERO DECIMAL
+        print(f"INDICE {indice}: {numEntero}")
+    # MENSAJE
+    print(" ") # ESPACIO
+    print("3) NUMEROS DECIMALES:")
+    # .items() = Método que devuelve una vista de los pares clave-valor del diccionario (numDecimal, Indice)
+    for numDecimal, indice in tabla_de_simbolos_de_numeros_decimales.items():
+        # IMPRIME EL INDICE Y EL NÚMERO DECIMAL
+        print(f"INDICE {indice}: {numDecimal}")
+    # MENSAJE
+    print(" ") # ESPACIO
+    print("4) STRINGS:")
+    # .items() = Método que devuelve una vista de los pares clave-valor del diccionario (string, Indice)
+    for string, indice in tabla_de_simbolos_de_strings.items():
+        print(f"INDICE {indice}: {string}")
+     
+      
+
+
+# FUNCIÓN QUE IMPRIME EL TOKEN Y EL INDICE
+# tupla = Lista de tuplas, donde cada tupla contiene un token y un lexema asociado
+# .get(): Este método intenta obtener el lexema en la tabla correspondiente. Si el lexema no está presente, devuelve 'Sin índice'
+def imprimir_tokens_con_indices(tupla):
+    print(" ") # ESPACIO
+    print(" ") # ESPACIO
+    print(" ") # ESPACIO
+    print("TOKENS E INDICES:")
+    # Bucle que iterará sobre cada elemento en la lista tupla
+    for token, lexema in tupla:
+        # Se inicializa la variable indice en None, (para almacenar el índice del lexema si es encontrado en alguna tabla de símbolos)
+        indice = None
+        # Si token es igual a 47 "numDecimal"
+        if token == '47':  
+            # Busca el lexema en tabla_de_simbolos_de_numeros_decimales
+            indice = tabla_de_simbolos_de_numeros_decimales.get(lexema, 'Sin índice')
+        # Si token es igual a 48 "numEntero"
+        elif token == '48':  
+            # Busca el lexema en tabla_de_simbolos_de_numeros_enteros
+            indice = tabla_de_simbolos_de_numeros_enteros.get(lexema, 'Sin índice')
+        # Si token es igual a 44 "identifier"
+        elif token == '44':  
+            # Busca el lexema en tabla_de_simbolos_de_numeros_decimales
+            indice = tabla_de_simbolos_de_identificadores.get(lexema, 'Sin índice')
+        # Si token es igual a 9 "string"
+        elif token == '9': 
+            # Busca el lexema en tabla_de_simbolos_de_strings
+            indice = tabla_de_simbolos_de_strings.get(lexema, 'Sin índice')
+        # Si indice existe y es diferente de 'Sin índice': 
+        if indice and indice != 'Sin índice':
+            # 1- imprime el token y el indice
+            print(f"{token}, {indice}")
+        # Si indice no existe o es 'Sin índice'
+        else:
+            # 2- Solo imprime el token
+            print(f"{token}, ")
+            
+            
 # EJECUTA EL ESCANER EN EL TEXTO DE ENTRADA
 texto_de_entrada = """ 
-{ Example #3 }
-program Ejemplo3;
-(* Var declaration section*)
-var
-a, b : integer;
-x, y : real;
-n : array [1..10] of integer;
-s: string;
-function calc (w, z : real) : integer;
+{ Example #1 }
+{ This is the typical "Hello World" }
+program HelloWorld;
+(* This is the main program block *)
 begin
-if (w >= z) then
-calc := 5
-else
-calc := 0;
-end;
-procedure arrayInit (w: integer; z: real);
-begin
-for i := 1 to 10 do
-begin
-n[i] := 1 * 5;
-writeLn( 'n[', i, '] =', n[i]);
-end;
-end;
-procedure assign (w, z : real);
-var
-temp: real;
-begin
-temp := w;
-repeat
-temp := temp -z;
-until (temp <=0);
-if (temp = 0) then
-begin
-a := 10;
-b := 20;
-end
-else
-begin
-a := 0;
-b := 0;
-end;
-end;
-begin
-s := 'The end';
-writeLn( ' x = ' );
-readLn(x);
-writeLn( ' y = ' );
-readLn(y);
-if (calc(x,y) = 5) then
-assign(x,y)
-else
-writeLn(s);
-end.
-
+writeLn( ' Hello World ' );
+end. (* This is the end of the main
+program block *)
 
 """
+
+
 # escanear(): Esta función toma como entrada una cadena de texto 
 # texto_de_entrada = Texto de prueba
 # resultado: Recibe el valor devuelto por la función escanear()
 resultado = escanear(texto_de_entrada)
+# MENSAJE
+print("TOKEN Y TEXTO:")
+print(" ") # ESPACIO
 # Bucle que recorre la lista resultado. En cada iteración, extrae una tupla que contiene dos elementos: token y lexema.
 for token, lexema in resultado:
     print(f"{token}, {lexema}")
+# IMPRESIÓN
+imprimir_tabla_de_simbolos()
+# IMPRESIÓN
+imprimir_tokens_con_indices(resultado)
